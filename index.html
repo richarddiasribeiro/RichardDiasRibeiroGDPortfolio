@@ -122,7 +122,7 @@
             left: 0;         /* Positions it at the left */
             right: 0;        /* Ensures it spans the full width */
             background-color: gray; /* Adds a background color */
-            color: white;    /* Ensures text is visible */
+            color: white !important;    /* Ensures text is visible */
             padding: 5px 10px; /* Adds some spacing */
             z-index: 1000;   /* Ensures the header stays on top of other elements */
             /*box-shadow: 0px 4px 10px gray;*/
@@ -131,9 +131,9 @@
 </head>
 <body>
      <header class="fixed-header">
-        <div class="hamburger-menu" onclick="toggleHamburgerMenuVisibility ();">☰</div>
-        <span style="font-size: xx-large;">Richard Dias Ribeiro</span><br>
-        <span style="font-size: larger;">Level Designer</span>
+        <div class="hamburger-menu" onclick="toggleHamburgerMenuVisibility ();" style="color: white">☰</div>
+        <span style="font-size: xx-large; color: white">Richard Dias Ribeiro</span><br>
+        <span style="font-size: larger; color: white">Level Designer</span>
         <nav style="text-align: right;">
             <a href="https://www.linkedin.com/in/richarddiasribeiro" target="_blank"><img src="https://drive.google.com/thumbnail?id=16ApLcrl9a0iyOm_Ehc3SvFt1s6JV3Qh_&sz=w50" class="social-media-header-icon" title="LinkedIn"/></a>&nbsp;&nbsp;
             <a href="https://github.com/richarddiasribeiro" target="_blank"><img src="https://drive.google.com/thumbnail?id=17el67IsJkWJ5GST24KPdeAEV-n-WKrBo&sz=w50" class="social-media-header-icon" title="GitHub"/></a>&nbsp;&nbsp;

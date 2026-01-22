@@ -2,10 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard's Game Development Portfolio</title>
+    <title>Test</title>
     <style>
+        .fixed-header-menu {
+            position: fixed; /* Fixes the header to the viewport */
+            top: 50;          /* Positions it at the top */
+            left: 0;         /* Positions it at the left */
+            right: 25%;        /* Ensures it spans the full width */
+            background-color: gray; /* Adds a background color */
+            color: white;    /* Ensures text is visible */
+            padding: 5px 10px; /* Adds some spacing */
+            z-index: 1000;   /* Ensures the header stays on top of other elements */
+            /*box-shadow: 0px 4px 10px gray;*/
+        }
+
+        .content {
+            margin-top: 80px; /* Adjust this value to be greater than the header's height */
+            padding: 20px;
+        }
+
+        .hamburger-menu {
+            text-align: left;
+            font-size: xx-large;
+            float: left;
+            margin-right: 25px;
+            text-shadow: 10px 10px 10px;
+            user-select: none;
+        }
+
+        .hamburger-menu:hover {
+            cursor: pointer;
+        }
+
+        .hamburger-menu-item {
+            border:2px outset darkgray;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-media-header-icon {
+            width: 35px;
+        }
+
+        .social-media-header-icon:hover {
+            cursor: pointer;
+        }
+
+        /*-----------------------------------*/
+        /*-----------------------------------*/
+        /*-----------------------------------*/
+
         img {
             cursor: pointer;
         }
@@ -66,55 +115,47 @@
             accent-color: rgba(35, 35, 35, 1);
             transform: scale(1.2);
         }
+
+        .fixed-header {
+            position: fixed; /* Fixes the header to the viewport */
+            top: 0;          /* Positions it at the top */
+            left: 0;         /* Positions it at the left */
+            right: 0;        /* Ensures it spans the full width */
+            background-color: gray; /* Adds a background color */
+            color: white;    /* Ensures text is visible */
+            padding: 5px 10px; /* Adds some spacing */
+            z-index: 1000;   /* Ensures the header stays on top of other elements */
+            /*box-shadow: 0px 4px 10px gray;*/
+        }
     </style>
 </head>
 <body>
+     <header class="fixed-header">
+        <div class="hamburger-menu" onclick="toggleHamburgerMenuVisibility ();">☰</div>
+        <span style="font-size: xx-large;">Richard Dias Ribeiro</span><br>
+        <span style="font-size: larger;">Level Designer</span>
+        <nav style="text-align: right;">
+            <a href="https://www.linkedin.com/in/richarddiasribeiro" target="_blank"><img src="https://drive.google.com/thumbnail?id=16ApLcrl9a0iyOm_Ehc3SvFt1s6JV3Qh_&sz=w50" class="social-media-header-icon" title="LinkedIn"/></a>&nbsp;&nbsp;
+            <a href="https://github.com/richarddiasribeiro" target="_blank"><img src="https://drive.google.com/thumbnail?id=17el67IsJkWJ5GST24KPdeAEV-n-WKrBo&sz=w50" class="social-media-header-icon" title="GitHub"/></a>&nbsp;&nbsp;
+            <a href="https://www.artstation.com/richard3644" target="_blank"><img src="https://drive.google.com/thumbnail?id=1ljGNS7WSnOVC2SwIXyQ7pI4eZikedS14&sz=w50" class="social-media-header-icon" title="ArtStation"/></a>&nbsp;&nbsp;
+            <a href="https://www.youtube.com/@richarddiasribeiro429" target="_blank"><img src="https://drive.google.com/thumbnail?id=1piP_2qQmZhkJjdQZV7kRx3ewdYPifr8o&sz=w50" class="social-media-header-icon" title="YouTube"/></a>&nbsp;&nbsp;
+        </nav>
+        <div id="harmbuger-menu" style="box-shadow: 0 0 10px white; color: white; display: none; padding: 10px; margin-bottom: 5px;">
+            <a class="hamburger-menu-item" href="#about-me" onclick="toggleHamburgerMenuVisibility ();">▶ About me</a><br><br>
+            <a class="hamburger-menu-item" href="#personal-projects" onclick="toggleHamburgerMenuVisibility ();">▶ Personal projects</a><br><br>
+            <a class="hamburger-menu-item" href="#gdd-projects" onclick="toggleHamburgerMenuVisibility ();">▶ GDD studies</a><br><br>
+            <a class="hamburger-menu-item" href="#contact" onclick="toggleHamburgerMenuVisibility ();">▶ Contact</a><br>
+        </div>
+    </header>
+    
 
+    <div class="content">
     <div style="text-align: center">
-        <p display="block;" style="font-size:50px; margin-bottom: 0;">
-        Richard Dias Ribeiro
-        </p>
-
-        <h2 style="font-style: italic; text-decoration: underline;">Game Developer</h2>
-            <br/>
-                <table style="margin: auto">
-                    <td style="padding-right: 30px">
-                        <!--Linkedin link-->
-                        <a href="https://www.linkedin.com/in/richarddiasribeiro" target="_blank">
-                            <img src="https://drive.google.com/thumbnail?id=16ApLcrl9a0iyOm_Ehc3SvFt1s6JV3Qh_&sz=w50">
-                        </a>
-                        <br />Linkedin
-                    </td>
-
-                    <td style="padding-right: 30px">
-                        <!--GitHub link-->
-                        <a href="https://github.com/richarddiasribeiro" target="_blank">
-                            <img src="https://drive.google.com/thumbnail?id=17el67IsJkWJ5GST24KPdeAEV-n-WKrBo&sz=w50">
-                        </a>
-                        <br />GitHub
-                    </td>
-                    
-                    <td style="padding-right: 30px">
-                        <!--Artstation link-->
-                        <a href="https://www.artstation.com/richard3644" target="_blank">
-                            <img src="https://drive.google.com/thumbnail?id=1ljGNS7WSnOVC2SwIXyQ7pI4eZikedS14&sz=w50">
-                        </a>
-                        <br />ArtStation
-                    </td>
-
-                    <td style="padding-right: 30px">
-                        <!--Youtube link-->
-                        <a href="https://www.youtube.com/@richarddiasribeiro429" target="_blank">
-                            <img src="https://drive.google.com/thumbnail?id=1piP_2qQmZhkJjdQZV7kRx3ewdYPifr8o&sz=w50">
-                        </a>
-                        <br />YouTube</b>
-                    </td>
-                </table>
 
                 <!--Start of about me section-->
                 <br />
 
-                <div class="portfolio-section"><h2>About me:</h2>
+                <div class="portfolio-section" id="about-me" style="scroll-margin-top: 108px;"><h2>About me:</h2>
                     <p>
                         I'm currently a hobbyist solo game developer, and
                         I've been passionate about game development ever since early adolescence.<br /><br />
@@ -126,7 +167,7 @@
                     </p>
                     
                     <br />
-                    <h2>Personal projects:</h2>
+                    <h2 id="personal-projects" style="scroll-margin-top: 108px;">Personal projects:</h2>
 
                     <div style="padding-left: 5px;">
                         <div style="font-weight: bold; font-size: large">Filter by scope:</div>
@@ -144,25 +185,25 @@
                 <!--End of about me section-->
                 <br />
                 
-                <div class="game full-game">
-                    <h2>Crazy Ostrich</h2>
+                <div class="game demo">
+                    <h2>Night Adventures - Demo</h2>
                     
-                    <a href="https://richarddiasribeiro.itch.io/crazy-ostrich" target="_blank">
-                        <img src="https://drive.google.com/thumbnail?id=1j7O7-_be7t5OG6aUohHnKPXP_ijc1R1X&sz=w200">
+                    <a href="https://richarddiasribeiro.itch.io/night-adventures-demo" target="_blank">
+                        <img src="https://drive.google.com/thumbnail?id=1qQq7moNaRz2xsqmv5BUjfpljdI3Rh-az&sz=w200">
                     </a>
                     <br />
 
 
 
                     <ul>
-                        <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Crazy Ostrich is a third-person 3D platformer in which you control a fast ostrich accross a puzzly corral. The player must must avoid hitting wooden objects and complete different types of objectives before time runs out.</div></li>
-                        <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2014</div></li>
-                        <li><div class="game-description-header">Project length</div><div class="game-desctription-content">6 months</div></li>
-                        <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Game design;<br />- Game art;<br />- Game programming;<br />- SFX.</div></li>
-                        <li><div class="game-description-header">Engine</div><div class="game-desctription-content">Blender Game Engine</div></li>
-                        <li><div class="game-description-header">Coded in</div><div class="game-desctription-content">Blender Logic Bricks</div></li>
-                        <li><div class="game-description-header">Relevant links</div><div class="game-desctription-content">- Download page: <a href="https://richarddiasribeiro.itch.io/crazy-ostrich" target="_blank">https://richarddiasribeiro.itch.io/crazy-ostrich</a>;<br />- Source code: <a href="https://github.com/richarddiasribeiro/Crazy-Ostrich" target="_blank">https://github.com/richarddiasribeiro/Crazy-Ostrich</a>.<br /  ></div></li>
-                        <li><div class="game-description-header">Personal notes</div><div class="game-desctription-content"><button id="CrazyOstrichShowHideButton" onclick="toggleTextVisibilityThroughButton('CrazyOstrichShowHideButton', 'CrazyOstrichPersonalNotes')">Show</button><div id="CrazyOstrichPersonalNotes" class="hiddenDivStyle">This was my very first fully developed game. My main challenges with this one were probably dealing with collision (at least back in the day (2014) collision in Blender was a little tough to get right, as objects often went through one another unwantedly). Also, through this project, I've learned the importance of avoiding "fake difficulty", especially related to player mechanics (it was clear right from the start that poor controls could easily make the game feel frustrating).</div></div></li>
+                        <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Night Adventures is a stylized, dark fantasy third-person action-adventure game. Players solve puzzles, use melee and magic weapons to fight hordes of enemies, and traverse magical, dark landscapes.</div></li>
+                        <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2025</div></li>
+                        <li><div class="game-description-header">Project length</div><div class="game-desctription-content">9 months</div></li>
+                        <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Level design;<br />- Game art (walls and end game portal only);<br />- Game programming;<br />- Enemy 1 voice acting.</div></li>
+                        <li><div class="game-description-header">Engine</div><div class="game-desctription-content">Unity</div></li>
+                        <li><div class="game-description-header">Coded in</div><div class="game-desctription-content">C#</div></li>
+                        <li><div class="game-description-header">Relevant links</div><div class="game-desctription-content">- Download page: <a href="https://richarddiasribeiro.itch.io/night-adventures-demo" target="_blank">https://richarddiasribeiro.itch.io/night-adventures-demo</a>;<br />- Documentation: <a href="https://drive.google.com/drive/folders/1H3SpAaAr8OdkPHTtljYh30tnHeWBh9Eh?usp=sharing" target="_blank">https://drive.google.com/drive/folders/<br/>1H3SpAaAr8OdkPHTtljYh30tnHeWBh9Eh?usp=sharing</a>;</div></li>
+                        <li><div class="game-description-header">Personal notes</div><div class="game-desctription-content"><button id="NightAdventuresShowHideButton" onclick="toggleTextVisibilityThroughButton('NightAdventuresShowHideButton', 'NightAdventuresPersonalNotes')">Show</button><div id="NightAdventuresPersonalNotes" class="hiddenDivStyle">Night Adventures is a fast-paced, third-person action-adventure game I've made during college, with 4 more classmates and great amount of support from one of our professors. In it, I've learned a lot of commonly-used Unity functions and advanced level scripting in C#. As for the level, I've used concepts such as rule of thirds, contrast, landmarks and color theory to help guide the player, as well as environmental storytelling through enemy lines, props and moving platforms. Note: Many of the art assets used in this game (such as the player and enemy characters) are NOT ours. They were acquired for free from the Unity Asset Store.</div></div></li>
                     </ul>
                 
                 </div>
@@ -190,31 +231,31 @@
                 
                 </div>
                 <br /><br />
-                <div class="game demo">
-                    <h2>Night Adventures - Demo</h2>
+                <div class="game full-game">
+                    <h2>Crazy Ostrich</h2>
                     
-                    <a href="https://richarddiasribeiro.itch.io/night-adventures-demo" target="_blank">
-                        <img src="https://drive.google.com/thumbnail?id=1qQq7moNaRz2xsqmv5BUjfpljdI3Rh-az&sz=w200">
+                    <a href="https://richarddiasribeiro.itch.io/crazy-ostrich" target="_blank">
+                        <img src="https://drive.google.com/thumbnail?id=1j7O7-_be7t5OG6aUohHnKPXP_ijc1R1X&sz=w200">
                     </a>
                     <br />
 
 
 
                     <ul>
-                        <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Night Adventures is a stylized, dark fantasy third-person action-adventure game. Players solve puzzles, use melee and magic weapons to fight hordes of enemies, and traverse magical, dark landscapes.</div></li>
-                        <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2025</div></li>
-                        <li><div class="game-description-header">Project length</div><div class="game-desctription-content">9 months</div></li>
-                        <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Level design;<br />- Game art (walls and end game portal only);<br />- Game programming;<br />- Enemy 1 voice acting.</div></li>
-                        <li><div class="game-description-header">Engine</div><div class="game-desctription-content">Unity</div></li>
-                        <li><div class="game-description-header">Coded in</div><div class="game-desctription-content">C#</div></li>
-                        <li><div class="game-description-header">Relevant links</div><div class="game-desctription-content">- Download page: <a href="https://richarddiasribeiro.itch.io/night-adventures-demo" target="_blank">https://richarddiasribeiro.itch.io/night-adventures-demo</a>;<br />- Documentation: <a href="https://drive.google.com/drive/folders/1H3SpAaAr8OdkPHTtljYh30tnHeWBh9Eh?usp=sharing" target="_blank">https://drive.google.com/drive/folders/<br/>1H3SpAaAr8OdkPHTtljYh30tnHeWBh9Eh?usp=sharing</a>;</div></li>
-                        <li><div class="game-description-header">Personal notes</div><div class="game-desctription-content"><button id="NightAdventuresShowHideButton" onclick="toggleTextVisibilityThroughButton('NightAdventuresShowHideButton', 'NightAdventuresPersonalNotes')">Show</button><div id="NightAdventuresPersonalNotes" class="hiddenDivStyle">Night Adventures is a fast-paced, third-person action-adventure game I've made during college, with 4 more classmates and great amount of support from one of our professors. In it, I've learned a lot of commonly-used Unity functions and advanced level scripting in C#. As for the level, I've used concepts such as rule of thirds, contrast, landmarks and color theory to help guide the player, as well as environmental storytelling through enemy lines, props and moving platforms. Note: Many of the art assets used in this game (such as the player and enemy characters) are NOT ours. They were acquired for free from the Unity Asset Store.</div></div></li>
+                        <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Crazy Ostrich is a third-person 3D platformer in which you control a fast ostrich accross a puzzly corral. The player must must avoid hitting wooden objects and complete different types of objectives before time runs out.</div></li>
+                        <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2014</div></li>
+                        <li><div class="game-description-header">Project length</div><div class="game-desctription-content">6 months</div></li>
+                        <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Game design;<br />- Game art;<br />- Game programming;<br />- SFX.</div></li>
+                        <li><div class="game-description-header">Engine</div><div class="game-desctription-content">Blender Game Engine</div></li>
+                        <li><div class="game-description-header">Coded in</div><div class="game-desctription-content">Blender Logic Bricks</div></li>
+                        <li><div class="game-description-header">Relevant links</div><div class="game-desctription-content">- Download page: <a href="https://richarddiasribeiro.itch.io/crazy-ostrich" target="_blank">https://richarddiasribeiro.itch.io/crazy-ostrich</a>;<br />- Source code: <a href="https://github.com/richarddiasribeiro/Crazy-Ostrich" target="_blank">https://github.com/richarddiasribeiro/Crazy-Ostrich</a>.<br /  ></div></li>
+                        <li><div class="game-description-header">Personal notes</div><div class="game-desctription-content"><button id="CrazyOstrichShowHideButton" onclick="toggleTextVisibilityThroughButton('CrazyOstrichShowHideButton', 'CrazyOstrichPersonalNotes')">Show</button><div id="CrazyOstrichPersonalNotes" class="hiddenDivStyle">This was my very first fully developed game. My main challenges with this one were probably dealing with collision (at least back in the day (2014) collision in Blender was a little tough to get right, as objects often went through one another unwantedly). Also, through this project, I've learned the importance of avoiding "fake difficulty", especially related to player mechanics (it was clear right from the start that poor controls could easily make the game feel frustrating).</div></div></li>
                     </ul>
                 
                 </div>
-                  <br /><br />
+                <br /><br />
 
-            <div class="portfolio-section"><h2>GDD studies:</h2>
+            <div class="portfolio-section" id="gdd-projects" style="scroll-margin-top: 108px;"><h2>GDD studies:</h2>
             
 
             <table style="margin: auto; text-align: center;">
@@ -234,8 +275,8 @@
             </table>
 
             </div>
-<br/><br/>
-            <div class="portfolio-section"><h2>Other forms of contact:</h2>
+            <br/><br/>
+            <div class="portfolio-section" id="contact"  style="scroll-margin-top: 108px;"><h2>Other forms of contact:</h2>
             
 
             <table style="margin: auto; text-align: center;">
@@ -260,6 +301,14 @@
     <br />
 </body>
 <script>
+    function toggleHamburgerMenuVisibility () {
+        if (document.getElementById ("harmbuger-menu").style.display == "inline-block") {
+            document.getElementById ("harmbuger-menu").style.display = "none";
+        } else {
+            document.getElementById ("harmbuger-menu").style.display = "inline-block";
+        }
+    }
+
 
     var fullGamesFilterCacheValue = true;
     var demosFilterCacheValue = true;
@@ -306,7 +355,3 @@
     }
 </script>
 </html>
-
-
-
-

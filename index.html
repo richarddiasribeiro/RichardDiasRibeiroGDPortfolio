@@ -129,10 +129,44 @@
             box-shadow: 0px 4px 10px black;
             /*border-bottom: 3px solid black;*/
         }
+
+        .toggle-header-div {
+            display: inline-block;
+            top: 120px;
+            position: fixed;
+            background-color: gray;
+            color: white;
+            font-size:larger;
+            /*font-weight: bolder;*/
+            /*-webkit-text-stroke: 0.2px black;*/
+            user-select: none;
+	        border:2px outset darkgray;
+        }
+
+        .toggle-header-div:hover {
+            cursor: pointer;
+        }
+
+        .toggle-header-div-open-version {
+            display: inline-block;
+            top: 20px;
+            position: fixed;
+            background-color: gray;
+            color: white;
+            font-size:larger;
+            /*font-weight: bolder;*/
+            /*-webkit-text-stroke: 0.2px black;*/
+            user-select: none;
+	        border:2px outset darkgray;
+        }
+
+        .toggle-header-div-open-version:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-     <header class="fixed-header">
+     <header class="fixed-header" id="header">
         <div class="hamburger-menu" onclick="toggleElementVisibility ('hamburger-menu');" style="color: white">☰</div>
         <span style="font-size: xx-large; color: white">Richard Dias Ribeiro</span><br>
         <span style="font-size: larger; color: white">Game Designer | Level Designer</span>
@@ -150,6 +184,7 @@
         </div>
     </header>
     
+    <div class="toggle-header-div" onclick="toggleElementVisibility ('header');">&nbsp;&nbsp;⇱&nbsp;&nbsp;<br></div>
 
     <div class="content">
     <div style="text-align: center">
@@ -172,7 +207,7 @@
                     <h2 id="personal-projects" style="scroll-margin-top: 108px;">Personal projects:</h2>
 
                     <div style="padding-left: 5px;">
-                        <div style="font-weight: bold; font-size: large">Filter by type:</div>
+                        <div style="font-weight: bold; font-size: large">Filter by type:</div><br />
                         
                         <input type="checkbox" onchange="updateFilters('full-game');" checked id="fullGamesFilterCheckbox" />
                         <label for="fullGamesFilterCheckbox">&nbsp;Full games</label>
@@ -188,7 +223,7 @@
                 <br />
                 
                 <div class="game demo">
-                    <h2>Night Adventures (Demo)</h2>
+                    <h2>Night Adventures</h2>
                     
                     <a href="https://richarddiasribeiro.itch.io/night-adventures-demo" target="_blank">
                         <img src="https://drive.google.com/thumbnail?id=1qQq7moNaRz2xsqmv5BUjfpljdI3Rh-az&sz=w200">
@@ -304,6 +339,17 @@
 </body>
 <script>
     function toggleElementVisibility (elementId) {
+        //toggling the header does a few other things
+        if (elementId == "header") {
+            if (document.getElementById (elementId).style.display == "inline-block") {
+                document.getElementsByClassName ('toggle-header-div')[0].style.top ="8px";
+                document.getElementsByClassName ('toggle-header-div')[0].innerHTML = "&nbsp;&nbsp;⇲&nbsp;&nbsp;"
+            } else {
+                document.getElementsByClassName ('toggle-header-div')[0].style.top ="120px";
+                document.getElementsByClassName ('toggle-header-div')[0].innerHTML = "&nbsp;&nbsp;⇱&nbsp;&nbsp;"
+            }
+        }
+
         if (document.getElementById (elementId).style.display == "inline-block") {
             document.getElementById (elementId).style.display = "none";
         } else {

@@ -133,7 +133,7 @@
 </head>
 <body>
      <header class="fixed-header">
-        <div class="hamburger-menu" onclick="toggleHamburgerMenuVisibility ();" style="color: white">☰</div>
+        <div class="hamburger-menu" onclick="toggleElementVisibility ('hamburger-menu');" style="color: white">☰</div>
         <span style="font-size: xx-large; color: white">Richard Dias Ribeiro</span><br>
         <span style="font-size: larger; color: white">Game Designer | Level Designer</span>
         <nav style="text-align: right;">
@@ -142,11 +142,11 @@
             <a href="https://www.artstation.com/richard3644" target="_blank"><img src="https://drive.google.com/thumbnail?id=1ljGNS7WSnOVC2SwIXyQ7pI4eZikedS14&sz=w50" class="social-media-header-icon" title="ArtStation"/></a>&nbsp;&nbsp;
             <a href="https://www.youtube.com/@richarddiasribeiro429" target="_blank"><img src="https://drive.google.com/thumbnail?id=1piP_2qQmZhkJjdQZV7kRx3ewdYPifr8o&sz=w50" class="social-media-header-icon" title="YouTube"/></a>&nbsp;&nbsp;
         </nav>
-        <div id="harmbuger-menu" style="box-shadow: 0 0 10px white; color: white; display: none; padding: 10px; margin-bottom: 5px;">
-            <a class="hamburger-menu-item" href="#about-me" onclick="toggleHamburgerMenuVisibility ();">▶ About me</a><br><br>
-            <a class="hamburger-menu-item" href="#personal-projects" onclick="toggleHamburgerMenuVisibility ();">▶ Personal projects</a><br><br>
-            <a class="hamburger-menu-item" href="#gdd-projects" onclick="toggleHamburgerMenuVisibility ();">▶ GDD studies</a><br><br>
-            <a class="hamburger-menu-item" href="#contact" onclick="toggleHamburgerMenuVisibility ();">▶ Contact</a><br>
+        <div id="hamburger-menu" style="box-shadow: 0 0 10px white; color: white; display: none; padding: 10px; margin-bottom: 5px;">
+            <a class="hamburger-menu-item" href="#about-me" onclick="toggleElementVisibility ('hamburger-menu');">▶ About me</a><br><br>
+            <a class="hamburger-menu-item" href="#personal-projects" onclick="toggleElementVisibility ('hamburger-menu');">▶ Personal projects</a><br><br>
+            <a class="hamburger-menu-item" href="#gdd-projects" onclick="toggleElementVisibility ('hamburger-menu');">▶ GDD studies</a><br><br>
+            <a class="hamburger-menu-item" href="#contact" onclick="toggleElementVisibility ('hamburger-menu');">▶ Contact</a><br>
         </div>
     </header>
     
@@ -303,14 +303,13 @@
     <br />
 </body>
 <script>
-    function toggleHamburgerMenuVisibility () {
-        if (document.getElementById ("harmbuger-menu").style.display == "inline-block") {
-            document.getElementById ("harmbuger-menu").style.display = "none";
+    function toggleElementVisibility (elementId) {
+        if (document.getElementById (elementId).style.display == "inline-block") {
+            document.getElementById (elementId).style.display = "none";
         } else {
-            document.getElementById ("harmbuger-menu").style.display = "inline-block";
+            document.getElementById (elementId).style.display = "inline-block";
         }
     }
-
 
     var fullGamesFilterCacheValue = true;
     var demosFilterCacheValue = true;
@@ -358,15 +357,10 @@
 
     document.addEventListener ("click", function (event) {
         if (!event.target.closest ("header")) {
-            if (document.getElementById ("harmbuger-menu").style.display == "inline-block") {
-                document.getElementById ("harmbuger-menu").style.display = "none";
+            if (document.getElementById ("hamburger-menu").style.display == "inline-block") {
+                document.getElementById ("hamburger-menu").style.display = "none";
             }
         }
     });
 </script>
 </html>
-
-
-
-
-

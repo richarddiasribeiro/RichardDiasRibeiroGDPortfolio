@@ -198,13 +198,23 @@
 
                         <input type="checkbox" onchange="updateFilters('demo');" checked id="demosFilterCheckbox" />
                         <label for="demosFilterCheckbox">&nbsp;Demos</label>
+                    </div><br>
+                    <div style="padding-left: 5px;">
+                        <div style="font-weight: bold; font-size: large">Order by:</div><br />
+                        
+                        <select name="OrderBySelectElementName" id="OrderBySelectElement" onchange="setPersonalProjectsCardsOrder(this.value);">
+                            <option value="relevance desc">Most relevant</option>
+                            <option value="relevance asc">Least relevant</option>
+                            <option value="releasedate desc">Newest</option>
+                            <option value="releasedate asc">Oldest</option>
+                        </select>
                     </div>
 
                 </div>
                 <br />
                 <!--End of about me section-->
                 <br />
-                
+                <span id="games-cards-container-element">
                 <div class="game demo">
                     <h2>Night Adventures</h2>
                     
@@ -217,6 +227,7 @@
 
                     <ul>
                         <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Night Adventures is a stylized, dark fantasy third-person action-adventure game. Players solve puzzles, use melee and magic weapons to fight hordes of enemies, and traverse magical, dark landscapes.</div></li>
+                        <li><div class="game-description-header">Type of project</div><div class="game-desctription-content">Demo</div></li>
                         <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2025</div></li>
                         <li><div class="game-description-header">Project length</div><div class="game-desctription-content">9 months</div></li>
                         <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Level design;<br />- Game art (walls and end game portal only);<br />- Game programming;<br />- Enemy 1 voice acting.</div></li>
@@ -240,6 +251,7 @@
 
                     <ul>
                         <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Dreamy is a third-person 3D platformer with slight RPG elements in which you control a magic armadillo, which goes through an imaginative journey of collecting coins, fighting reddish glass-made enemies and traversing static/moving platforms towards each level’s endpoint.</div></li>
+                        <li><div class="game-description-header">Type of project</div><div class="game-desctription-content">Full game</div></li>
                         <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2025</div></li>
                         <li><div class="game-description-header">Project length</div><div class="game-desctription-content">12 months</div></li>
                         <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Game design;<br />- Game art;<br />- Game programming;<br />- SFX (some of them);<br />- Music.</div></li>
@@ -263,6 +275,7 @@
 
                     <ul>
                         <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Crazy Ostrich is a third-person 3D platformer in which you control a fast ostrich accross a puzzly corral. The player must must avoid hitting wooden objects and complete different types of objectives before time runs out.</div></li>
+                        <li><div class="game-description-header">Type of project</div><div class="game-desctription-content">Full game</div></li>
                         <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2014</div></li>
                         <li><div class="game-description-header">Project length</div><div class="game-desctription-content">6 months</div></li>
                         <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Game design;<br />- Game art;<br />- Game programming;<br />- SFX.</div></li>
@@ -295,7 +308,7 @@
             </table>
 
             </div>
-            <br/><br/>
+            <br/><br/></span>
             <div class="portfolio-section" id="contact"  style="scroll-margin-top: 108px;"><h2>Other forms of contact:</h2>
             
 
@@ -321,6 +334,104 @@
     <br />
 </body>
 <script>
+''
+    var fullGamesFilterCacheValue = true;
+    var demosFilterCacheValue = true;
+    var personalProjectsCardsArray =
+    [{
+        relevance: 3,
+        releaseDateValue: 202502,
+        htmlCode:
+        `
+        <div class="game demo">
+            <h2>Night Adventures</h2>
+                
+            <a href="https://richarddiasribeiro.itch.io/night-adventures-demo" target="_blank">
+                <img src="https://drive.google.com/thumbnail?id=1qQq7moNaRz2xsqmv5BUjfpljdI3Rh-az&sz=w200">
+            </a>
+            <br />
+
+
+
+            <ul>
+                <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Night Adventures is a stylized, dark fantasy third-person action-adventure game. Players solve puzzles, use melee and magic weapons to fight hordes of enemies, and traverse magical, dark landscapes.</div></li>
+                <li><div class="game-description-header">Type of project</div><div class="game-desctription-content">Demo</div></li>
+                <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2025</div></li>
+                <li><div class="game-description-header">Project length</div><div class="game-desctription-content">9 months</div></li>
+                <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Level design;<br />- Game art (walls and end game portal only);<br />- Game programming;<br />- Enemy 1 voice acting.</div></li>
+                <li><div class="game-description-header">Engine</div><div class="game-desctription-content">Unity</div></li>
+                <li><div class="game-description-header">Coded in</div><div class="game-desctription-content">C#</div></li>
+                <li><div class="game-description-header">Relevant links</div><div class="game-desctription-content">- Download page: <a href="https://richarddiasribeiro.itch.io/night-adventures-demo" target="_blank">https://richarddiasribeiro.itch.io/night-adventures-demo</a>;<br />- Documentation: <a href="https://drive.google.com/drive/folders/1H3SpAaAr8OdkPHTtljYh30tnHeWBh9Eh?usp=sharing" target="_blank">https://drive.google.com/drive/folders/<br/>1H3SpAaAr8OdkPHTtljYh30tnHeWBh9Eh?usp=sharing</a>;</div></li>
+                <li><div class="game-description-header">Personal notes</div><div class="game-desctription-content"><button id="NightAdventuresShowHideButton" onclick="toggleTextVisibilityThroughButton('NightAdventuresShowHideButton', 'NightAdventuresPersonalNotes')">Show</button><div id="NightAdventuresPersonalNotes" class="hiddenDivStyle">Night Adventures is a fast-paced, third-person action-adventure game I've made during college, with 4 more classmates and great amount of support from one of our professors. In it, I've learned a lot of commonly-used Unity functions and advanced level scripting in C#. As for the level, I've used concepts such as rule of thirds, contrast, landmarks and color theory to help guide the player, as well as environmental storytelling through enemy lines, props and moving platforms. Note: Many of the art assets used in this game (such as the player and enemy characters) are NOT ours. They were acquired for free from the Unity Asset Store.</div></div></li>
+            </ul>
+            
+        </div>
+        <br /><br />
+        `
+    },
+    {
+        relevance: 2,
+        releaseDateValue: 202501,
+        htmlCode:
+        `
+        <div class="game full-game">
+            <h2>Dreamy</h2>
+            
+            <a href="https://richarddiasribeiro.itch.io/dreamy" target="_blank">
+                <img src="https://drive.google.com/thumbnail?id=1p-w6XZnL-0XnDX7Uux6gKwJnPvaq9_l0&sz=w200">
+            </a>
+            <br />
+
+
+
+            <ul>
+                <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Dreamy is a third-person 3D platformer with slight RPG elements in which you control a magic armadillo, which goes through an imaginative journey of collecting coins, fighting reddish glass-made enemies and traversing static/moving platforms towards each level’s endpoint.</div></li>
+                <li><div class="game-description-header">Type of project</div><div class="game-desctription-content">Full game</div></li>
+                <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2025</div></li>
+                <li><div class="game-description-header">Project length</div><div class="game-desctription-content">12 months</div></li>
+                <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Game design;<br />- Game art;<br />- Game programming;<br />- SFX (some of them);<br />- Music.</div></li>
+                <li><div class="game-description-header">Engine</div><div class="game-desctription-content">Unreal Engine</div></li>
+                <li><div class="game-description-header">Coded in</div><div class="game-desctription-content">Blueprint Scripting Language</div></li>
+                <li><div class="game-description-header">Relevant links</div><div class="game-desctription-content">- Download page: <a href="https://richarddiasribeiro.itch.io/dreamy" target="_blank">https://richarddiasribeiro.itch.io/dreamy</a>;<br />- Source code: <a href="https://github.com/richarddiasribeiro/Dreamy" target="_blank">https://github.com/richarddiasribeiro/Dreamy</a>;<br />- Documentation: <a href="https://drive.google.com/drive/folders/1lfcelFB14B9XKv1dYCdlAtPEhvyuNa11" target="_blank">https://drive.google.com/drive/folders/<br />1lfcelFB14B9XKv1dYCdlAtPEhvyuNa11</a>.</div></li>
+                <li><div class="game-description-header">Personal notes</div><div class="game-desctription-content"><button id="DreamyShowHideButton" onclick="toggleTextVisibilityThroughButton('DreamyShowHideButton', 'DreamyPersonalNotes')">Show</button><div id="DreamyPersonalNotes" class="hiddenDivStyle">This game was my introduction to both a new engine (Unreal Engine) and a new type of platform (mobile devices); I’ve definately learned a lot in technical terms with this project. Regarding documentation and task management, I've used infographics made in Photoshop and a Trello board, respectively. The thing I’m the most proud of in this game is probably the narrative; the main menu’s background changes progressively after each level is beaten, helping tell the story besides from the cutscenes in a subtle way. The things I regret the most are probably not working on the core mechanics more right from the start (such as the jumping, which still feels a little off) and ignoring artistic aspects (for the first released version, enemies not having textures made the development faster, but it also made them unappealing).</div></div></li>
+            </ul>
+        
+        </div>
+        <br /><br />
+        ` 
+    },
+    {
+        relevance: 1,
+        releaseDateValue: 202401,
+        htmlCode:
+        `
+        <div class="game full-game">
+            <h2>Crazy Ostrich</h2>
+            
+            <a href="https://richarddiasribeiro.itch.io/crazy-ostrich" target="_blank">
+                <img src="https://drive.google.com/thumbnail?id=1j7O7-_be7t5OG6aUohHnKPXP_ijc1R1X&sz=w200">
+            </a>
+            <br />
+
+
+
+            <ul>
+                <li><div class="game-description-header">High concept</div><div class="game-desctription-content">Crazy Ostrich is a third-person 3D platformer in which you control a fast ostrich accross a puzzly corral. The player must must avoid hitting wooden objects and complete different types of objectives before time runs out.</div></li>
+                <li><div class="game-description-header">Type of project</div><div class="game-desctription-content">Full game</div></li>
+                <li><div class="game-description-header">Release year</div><div class="game-desctription-content">2014</div></li>
+                <li><div class="game-description-header">Project length</div><div class="game-desctription-content">6 months</div></li>
+                <li><div class="game-description-header">What I did</div><div class="game-desctription-content">- Game design;<br />- Game art;<br />- Game programming;<br />- SFX.</div></li>
+                <li><div class="game-description-header">Engine</div><div class="game-desctription-content">Blender Game Engine</div></li>
+                <li><div class="game-description-header">Coded in</div><div class="game-desctription-content">Blender Logic Bricks</div></li>
+                <li><div class="game-description-header">Relevant links</div><div class="game-desctription-content">- Download page: <a href="https://richarddiasribeiro.itch.io/crazy-ostrich" target="_blank">https://richarddiasribeiro.itch.io/crazy-ostrich</a>;<br />- Source code: <a href="https://github.com/richarddiasribeiro/Crazy-Ostrich" target="_blank">https://github.com/richarddiasribeiro/Crazy-Ostrich</a>.<br /  ></div></li>
+                <li><div class="game-description-header">Personal notes</div><div class="game-desctription-content"><button id="CrazyOstrichShowHideButton" onclick="toggleTextVisibilityThroughButton('CrazyOstrichShowHideButton', 'CrazyOstrichPersonalNotes')">Show</button><div id="CrazyOstrichPersonalNotes" class="hiddenDivStyle">This was my very first fully developed game. My main challenges with this one were probably dealing with collision (at least back in the day (2014) collision in Blender was a little tough to get right, as objects often went through one another unwantedly). Also, through this project, I've learned the importance of avoiding "fake difficulty", especially related to player mechanics (it was clear right from the start that poor controls could easily make the game feel frustrating).</div></div></li>
+            </ul>
+        
+        </div>
+        <br /><br />
+        ` 
+    }];
+
     function toggleElementVisibility (elementId) {
         //toggling the header does a few other things
         if (elementId == "header") {
@@ -339,9 +450,6 @@
             document.getElementById (elementId).style.display = "inline-block";
         }
     }
-
-    var fullGamesFilterCacheValue = true;
-    var demosFilterCacheValue = true;
 
     function toggleTextVisibilityThroughButton(buttonId, elementId) {
 
@@ -391,5 +499,41 @@
             }
         }
     });
+
+    function setPersonalProjectsCardsOrder (sortBy = "relevance desc") {
+        if (sortBy == "relevance desc") {
+
+            personalProjectsCardsArray.sort(function(a, b) {
+                return b.relevance - a.relevance;
+            });
+
+        } else if (sortBy == "relevance asc") {
+
+            personalProjectsCardsArray.sort(function(a, b) {
+                return a.relevance - b.relevance;
+            });
+
+        } else if (sortBy == "releasedate desc") {
+
+            personalProjectsCardsArray.sort(function(a, b) {
+                return b.releaseDateValue - a.releaseDateValue;
+            });
+
+        } else if (sortBy == "releasedate asc") {
+
+            personalProjectsCardsArray.sort(function(a, b) {
+                return a.releaseDateValue - b.releaseDateValue;
+            });
+
+        }
+
+        var newCardsHtml = '';
+
+        for (const card of personalProjectsCardsArray) {
+            newCardsHtml += card.htmlCode;
+        }
+
+        document.getElementById ('games-cards-container-element').innerHTML = newCardsHtml;
+    }
 </script>
 </html>
